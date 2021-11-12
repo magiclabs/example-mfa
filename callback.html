@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Automatically handle auth callback using Magic! -->
+
+  <script
+    src="https://auth.magic.link/pnp/callback"
+    data-magic-publishable-api-key="pk_live_AEEDF5FC0607D2C4"
+  ></script>
+
+  <!-- Use data from Magic! -->
+
+  <script>
+    window.addEventListener("@magic/ready", (e) => {
+      const { idToken, userMetadata, oauth } = e.detail;
+    });
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<!-- UI implementation -->
+
+<body>
+  <div class="page">
+    <h1>Now let's enable MFA</h1>
+    <div class="data">
+      <a class="link" href="/settings.html">Open user settings</a> to enable
+      MFA.
+    </div>
+    <div class="data">
+      Once enabled, <a class="link" href="/logout.html">log out</a> then log
+      back in to try multi-factor login.
+    </div>
+  </div>
+</body>
